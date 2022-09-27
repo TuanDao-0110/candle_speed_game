@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail:400" rel="stylesheet" type="text/css" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css" />
+    <title>game speed</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>remember always keep the light on</h1>
+      <p class="text your_life_text">
+        <span>vs your life left :</span>
+        <span class="your_life"><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart"></i></span>
+      </p>
+      <p class="my_score text">my score:  <span id="score_result">0</span></p>
+
+      <p class="count_down"></p>
+      <div class="play_area">
+        <div class="candle_frame">
+          <div class="candle">
+            <div class="thread"></div>
+            <div class="light fire"></div>
+          </div>
+        </div>
+        <div class="candle_frame">
+          <div class="candle">
+            <div class="thread"></div>
+            <div class="light fire"></div>
+          </div>
+        </div>
+        <div class="candle_frame">
+          <div class="candle">
+            <div class="thread"></div>
+            <div class="light fire"></div>
+          </div>
+        </div>
+        <div class="candle_frame">
+          <div class="candle">
+            <div class="thread"></div>
+            <div class="light fire"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <button class="btn start">start</button>
+        <button class="btn reset clicked">reset</button>
+        <button class="btn stop clicked">stop</button>
+      </div>
+    </div>
+    <div class="modal display_none" id="modal">
+      <div class="content">
+        <h1>Opp !!!! you lose the game</h1>
+
+        <h2 style="width: 100%; text-align: center">Ranking list</h2>
+        <div class="rank"></div>
+        <button class="btn close" id="close">x</button>
+      </div>
+    </div>
+    <div class="cursor"></div>
+    <script src="./main.js"></script>
+  </body>
+</html>
