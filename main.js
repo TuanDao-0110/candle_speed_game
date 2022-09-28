@@ -17,6 +17,8 @@ let modal = document.querySelector('#modal')
 let stopBtn = document.querySelector('.stop')
 let yourLife = document.querySelector('.your_life')
 let rankDocument = document.querySelector('.rank')
+var audio = new Audio('./alarm.mp3');
+
 let totalScore = 0
 // flag is use to check that in case the time run out 
 // if the user turn on light on time. 
@@ -138,20 +140,17 @@ const reduceLife = () => {
 
 const runTheGame = (time) => {
     // let count = 1
-
-
     if (stopFlag) {
         checkUntil(time).then(res => {
             if (stopFlag) {
                 turnOffCandle(lights)
-                runTheGame(time - (totalScore * 10))
+                runTheGame(time - (totalScore * 30))
             }
         }).catch(err => {
             if (yourLifeLeft > 0) {
                 reduceLife()
                 turnOffCandle(lights)
-                runTheGame(time - (totalScore * 10))
-
+                runTheGame(time - (totalScore * 30))
             } else {
                 flag = false
                 showModal()
@@ -194,8 +193,10 @@ reset.addEventListener('click', () => {
 
 const showModal = () => {
     // getLocalStore()
+    audio.currentTime = 0
+    audio.play();
+
     if (rankList?.length > 10) {
-        console.log('do it')
         rankList?.slice(0, 1, totalScore)
         rankList?.sort((a, b) => b - a)
     } else {
@@ -208,6 +209,7 @@ const showModal = () => {
 
 const closeModal = () => {
     modal.classList.add('display_none')
+    audio.pause()
 }
 // 11.  put event for close button
 closeBtn.addEventListener('click', () => {
@@ -252,6 +254,6 @@ const lifeLeftRender = () => {
 const addRank = () => {
     rankDocument.innerHTML = ''
     rankList?.map((item, index) => {
-        rankDocument.innerHTML += `<p>  ${index === 0 ? 'highest score' : (`${index+1}-----------------`)} -- ${item}</p>`
+        rankDocument.innerHTML += `<p>  ${index === 0 ? 'highest score' : (`${index + 1}-----------------`)} -- ${item}</p>`
     })
 }
