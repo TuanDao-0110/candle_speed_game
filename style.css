@@ -82,7 +82,7 @@ h1 {
 .your_life_text {
     color: greenyellow;
     display: flex;
-    width: 30%;
+    /* width: 50%; */
     margin: auto;
     justify-content: space-between;
 }
