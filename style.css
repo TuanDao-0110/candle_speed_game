@@ -119,7 +119,7 @@ h1 {
     display: flex;
     /* overflow: hidden; */
 }
-
+/* candle style fork from https://www.geeksforgeeks.org/how-to-create-candle-animation-using-css/ */
 .candle_frame {
     position: relative;
     width: 25%;
@@ -185,6 +185,9 @@ h1 {
     /* cursor: alias; */
     /* cursor: url("../../logo/love_logo.png"), auto; */
 }
+
+
+/*  */
 @keyframes move {
     0% {
         transform: rotateZ(1deg);
@@ -203,6 +206,8 @@ h1 {
         left: 36px;
     }
 }
+
+
 
 /* constrol  */
 .control {
